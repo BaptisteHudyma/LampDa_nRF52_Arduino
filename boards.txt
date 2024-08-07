@@ -738,3 +738,59 @@ particle_xenon.menu.debug_output.serial1=Serial1
 particle_xenon.menu.debug_output.serial1.build.logger_flags=-DCFG_LOGGER=1 -DCFG_TUSB_DEBUG=CFG_DEBUG
 particle_xenon.menu.debug_output.rtt=Segger RTT
 particle_xenon.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
+
+
+# ----------------------------------
+# Lamp-Da
+# ----------------------------------
+lampDa_nrf52840.name=LampDa nRF52840
+
+# VID/PID for bootloader
+lampDa_nrf52840.vid.0=0x1209
+lampDa_nrf52840.pid.0=0x7A05
+lampDa_nrf52840.vid.1=0x1209
+lampDa_nrf52840.pid.1=0x8A05
+lampDa_nrf52840.vid.2=0x1209
+lampDa_nrf52840.pid.2=0x7A05
+lampDa_nrf52840.vid.3=0x1209
+lampDa_nrf52840.pid.3=0x8A05
+
+# Upload
+lampDa_nrf52840.bootloader.tool=bootburn
+lampDa_nrf52840.upload.tool=nrfutil
+lampDa_nrf52840.upload.protocol=nrfutil
+lampDa_nrf52840.upload.use_1200bps_touch=true
+lampDa_nrf52840.upload.wait_for_upload_port=true
+lampDa_nrf52840.upload.maximum_size=811008
+lampDa_nrf52840.upload.maximum_data_size=237568
+
+# Build
+lampDa_nrf52840.build.mcu=cortex-m4
+lampDa_nrf52840.build.f_cpu=64000000
+lampDa_nrf52840.build.board=LAMP_DA
+lampDa_nrf52840.build.core=nRF5
+lampDa_nrf52840.build.variant=lampda_nrf52840
+lampDa_nrf52840.build.usb_manufacturer="Generic"
+lampDa_nrf52840.build.usb_product="Lampda nRF52840 v1.0"
+lampDa_nrf52840.build.extra_flags=-DNRF52840_XXAA {build.flags.usb}
+lampDa_nrf52840.build.ldscript=nrf52840_s140_v6.ld
+lampDa_nrf52840.build.openocdscript=scripts/openocd/daplink_nrf52.cfg
+lampDa_nrf52840.build.vid=0x1209
+lampDa_nrf52840.build.pid=0x7A05
+
+# Menu: SoftDevice
+lampDa_nrf52840.menu.softdevice.s140v6=S140 6.1.1
+lampDa_nrf52840.menu.softdevice.s140v6.build.sd_name=s140
+lampDa_nrf52840.menu.softdevice.s140v6.build.sd_version=6.1.1
+lampDa_nrf52840.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+lampDa_nrf52840.menu.debug.l0=Level 0 (Release)
+lampDa_nrf52840.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+lampDa_nrf52840.menu.debug.l1=Level 1 (Error Message)
+lampDa_nrf52840.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+lampDa_nrf52840.menu.debug.l2=Level 2 (Full Debug)
+lampDa_nrf52840.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+lampDa_nrf52840.menu.debug.l3=Level 3 (Segger SystemView)
+lampDa_nrf52840.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+lampDa_nrf52840.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
