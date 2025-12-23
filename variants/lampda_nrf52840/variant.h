@@ -20,7 +20,7 @@ extern "C" {
 #endif  // __cplusplus
 
 #define LAMPDA_FIRMWARE_VERSION_MAJOR 1
-#define LAMPDA_FIRMWARE_VERSION_MINOR 2
+#define LAMPDA_FIRMWARE_VERSION_MINOR 3
 
 #define ADC_RESOLUTION (12) // 12 bit ADC
 
